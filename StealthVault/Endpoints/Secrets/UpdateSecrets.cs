@@ -22,6 +22,7 @@ public class UpdateSecrets(ISecretService service, ICurrentUser currentUser)
             Name = req.Name,
             Ciphertext = req.Ciphertext,
             UserId = currentUser.UserId,
+            Iv = req.Iv,
         }, ct);
 
         await Send.OkAsync(new BaseResponse

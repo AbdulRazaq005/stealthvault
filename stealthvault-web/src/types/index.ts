@@ -60,6 +60,7 @@ export interface CreateSecretRequest {
 export interface UpdateSecretRequest {
   name: string;
   ciphertext: string;
+  iv: string;
 }
 
 export interface BaseResponse {

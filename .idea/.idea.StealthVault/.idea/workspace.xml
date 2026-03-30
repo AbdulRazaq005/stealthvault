@@ -11,16 +11,12 @@
   <component name="ChangeListManager">
     <list default="true" id="e6c592df-c91c-48f8-b65a-d745bf7a8f1b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StealthVault/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StealthVault/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StealthVault/Application/Services/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/StealthVault/Application/Services/AuthService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StealthVault/Application/TaskModels/UpdatePasswordTaskModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/StealthVault/Application/TaskModels/UpdatePasswordTaskModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StealthVault/Endpoints/Auth/UpdatePassword.Request.cs" beforeDir="false" afterPath="$PROJECT_DIR$/StealthVault/Endpoints/Auth/UpdatePassword.Request.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StealthVault/Endpoints/Auth/UpdatePassword.cs" beforeDir="false" afterPath="$PROJECT_DIR$/StealthVault/Endpoints/Auth/UpdatePassword.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stealthvault-web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/stealthvault-web/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stealthvault-web/src/pages/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/stealthvault-web/src/pages/Profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StealthVault/Application/Services/SecretService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/StealthVault/Application/Services/SecretService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StealthVault/Endpoints/Secrets/UpdateSecrets.Request.cs" beforeDir="false" afterPath="$PROJECT_DIR$/StealthVault/Endpoints/Secrets/UpdateSecrets.Request.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StealthVault/Endpoints/Secrets/UpdateSecrets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/StealthVault/Endpoints/Secrets/UpdateSecrets.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stealthvault-web/src/pages/Vault.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/stealthvault-web/src/pages/Vault.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stealthvault-web/src/services/crypto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/stealthvault-web/src/services/crypto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stealthvault-web/src/services/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/stealthvault-web/src/services/api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stealthvault-web/src/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/stealthvault-web/src/types/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stealthvault-web/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/stealthvault-web/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +41,10 @@
     "accountId": "3ce5ef1f-f54d-4fb5-874c-3a77c2889753"
   }
 }]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Users/abdulrazaq/Software Engineering/Projects/StealthVault/StealthVault/Application/Services/AuthService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/package-lock.json" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
   <component name="KubernetesApiProvider"><![CDATA[{
   "isMigrated": true
@@ -121,7 +121,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1774853786039</updated>
-      <workItem from="1774853787625" duration="6458000" />
+      <workItem from="1774853787625" duration="10056000" />
     </task>
     <task id="LOCAL-00001" summary="add projects">
       <option name="closed" value="true" />
@@ -139,7 +139,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774856644406</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update password update logic">
+      <option name="closed" value="true" />
+      <created>1774871774802</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1774871774802</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +159,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="add projects" />
     <MESSAGE value="rename project name" />
-    <option name="LAST_COMMIT_MESSAGE" value="rename project name" />
+    <MESSAGE value="update password update logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="update password update logic" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { apiService } from "@/services/api";
-import { encryptSecret, decryptSecret } from "@/services/crypto";
+import { decryptSecret, encryptSecret } from "@/services/crypto";
 import { SecretType } from "@/types";
 import type { Secret } from "@/types";
 import { Button } from "@/components/ui/button";
@@ -54,14 +54,14 @@ import { Badge } from "@/components/ui/badge";
 import VaultUnlock from "@/components/VaultUnlock";
 
 const secretTypeLabels: Record<SecretType, string> = {
-  [SecretType.ApiKey]: "API Key",
   [SecretType.Credentials]: "Credentials",
+  [SecretType.ApiKey]: "API Key",
   [SecretType.PlainText]: "Plain Text",
 };
 
 const secretTypeIcons: Record<SecretType, React.ReactNode> = {
-  [SecretType.ApiKey]: <Key className="h-4 w-4" />,
   [SecretType.Credentials]: <Lock className="h-4 w-4" />,
+  [SecretType.ApiKey]: <Key className="h-4 w-4" />,
   [SecretType.PlainText]: <FileText className="h-4 w-4" />,
 };
 
@@ -241,7 +241,8 @@ const Vault: React.FC = () => {
       if (editingSecret) {
         await apiService.updateSecret(editingSecret.id, {
           name: form.name.trim(),
-          ciphertext: `${encrypted.iv}:${encrypted.ciphertext}`,
+          ciphertext: encrypted.ciphertext,
+          iv: encrypted.iv,
         });
         toast({
           title: "Updated",
@@ -354,8 +355,8 @@ const Vault: React.FC = () => {
           <SelectContent>
             <SelectItem value="all">All Types</SelectItem>
             <SelectItem value="1">Credentials</SelectItem>
-            <SelectItem value="0">API Key</SelectItem>
-            <SelectItem value="2">Plain Text</SelectItem>
+            <SelectItem value="2">API Key</SelectItem>
+            <SelectItem value="3">Plain Text</SelectItem>
           </SelectContent>
         </Select>
       </div>
@@ -466,17 +467,6 @@ const Vault: React.FC = () => {
             </DialogDescription>
           </DialogHeader>
           <div className="space-y-4">
-            <div className="space-y-2">
-              <Label>Name</Label>
-              <Input
-                value={form.name}
-                onChange={(e) =>
-                  setForm((p) => ({ ...p, name: e.target.value }))
-                }
-                placeholder="My Secret"
-              />
-            </div>
-
             {!editingSecret && (
               <div className="space-y-2">
                 <Label>Type</Label>
@@ -491,12 +481,22 @@ const Vault: React.FC = () => {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="1">Credentials</SelectItem>
-                    <SelectItem value="0">API Key</SelectItem>
-                    <SelectItem value="2">Plain Text</SelectItem>
+                    <SelectItem value="2">API Key</SelectItem>
+                    <SelectItem value="3">Plain Text</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
             )}
+            <div className="space-y-2">
+              <Label>Name</Label>
+              <Input
+                value={form.name}
+                onChange={(e) =>
+                  setForm((p) => ({ ...p, name: e.target.value }))
+                }
+                placeholder="My Secret"
+              />
+            </div>
 
             {form.type === SecretType.Credentials && (
               <>

@@ -12,4 +12,5 @@ public class UpdateSecretsRequest
     public string Name { get; set; } = null!;
     [Required]
     public string Ciphertext { get; set; } = null!;
+    public string Iv { get; set; } = null!;
 }

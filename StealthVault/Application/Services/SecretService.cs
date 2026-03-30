@@ -50,6 +50,7 @@ public class SecretService(IAppDbContext appDbContext) : ISecretService
 
         secret.Name = model.Name;
         secret.Ciphertext = model.Ciphertext;
+        secret.Iv = model.Iv;
         return await appDbContext.SaveChangesAsync(ct) > 0;
     }
 
