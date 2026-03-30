@@ -1,0 +1,6 @@
+Debug/*
+Release/*
+.zip
+node_modules/
+Debug/
+Release/
