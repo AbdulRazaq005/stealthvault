@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useAuth } from '@/contexts/AuthContext';
-import { Button } from '@/components/ui/button';
-import { Shield, ArrowRight, Lock, Key, FileText } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { Link } from "react-router-dom";
+import { useAuth } from "@/contexts/AuthContext";
+import { Button } from "@/components/ui/button";
+import { Shield, ArrowRight, Lock, Key, FileText } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Index: React.FC = () => {
   const { isAuthenticated } = useAuth();
@@ -27,10 +27,11 @@ const Index: React.FC = () => {
         transition={{ duration: 0.5, delay: 0.2 }}
       >
         <h1 className="text-5xl sm:text-6xl font-bold font-display mb-4 tracking-tight">
-          Stealth<span className="text-primary">Vault</span>
+          Stealth<span className="text-primary">Secrets</span>
         </h1>
         <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto mb-8 leading-relaxed">
-          Your secrets, encrypted. Zero-knowledge architecture ensures only you can access your credentials, API keys, and private notes.
+          Your secrets, encrypted. Zero-knowledge architecture ensures only you
+          can access your credentials, API keys, and private notes.
         </p>
       </motion.div>
 
@@ -69,11 +70,26 @@ const Index: React.FC = () => {
         className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl"
       >
         {[
-          { icon: <Lock className="h-5 w-5" />, label: 'Credentials', desc: 'Securely store login details' },
-          { icon: <Key className="h-5 w-5" />, label: 'API Keys', desc: 'Manage service tokens' },
-          { icon: <FileText className="h-5 w-5" />, label: 'Secure Notes', desc: 'Encrypted text storage' },
-        ].map(item => (
-          <div key={item.label} className="flex flex-col items-center gap-2 rounded-xl border border-border bg-card p-6 vault-card">
+          {
+            icon: <Lock className="h-5 w-5" />,
+            label: "Credentials",
+            desc: "Securely store login details",
+          },
+          {
+            icon: <Key className="h-5 w-5" />,
+            label: "API Keys",
+            desc: "Manage service tokens",
+          },
+          {
+            icon: <FileText className="h-5 w-5" />,
+            label: "Secure Notes",
+            desc: "Encrypted text storage",
+          },
+        ].map((item) => (
+          <div
+            key={item.label}
+            className="flex flex-col items-center gap-2 rounded-xl border border-border bg-card p-6 vault-card"
+          >
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
               {item.icon}
             </div>
