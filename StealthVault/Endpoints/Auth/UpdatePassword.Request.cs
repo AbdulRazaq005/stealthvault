@@ -8,12 +8,8 @@ public class UpdatePasswordRequest
 {
     [Required]
     public string Password { get; set; } = null!;
-    
-    [Required]
+    public string NewPassword { get; set; } = null!;
     public string VaultKeyEncMaster { get; set; } = null!;
-    
-    [Required]
-    public string VaultKeyEncRecovery { get; set; } = null!;
 }
 
 public class UpdatePasswordRequestValidator : Validator<UpdatePasswordRequest>
@@ -21,13 +17,13 @@ public class UpdatePasswordRequestValidator : Validator<UpdatePasswordRequest>
     public UpdatePasswordRequestValidator()
     {
         RuleFor(x => x.Password)
-            .NotEmpty().WithMessage("Password is required");
+            .NotEmpty().WithMessage("Current Login Password is required");
 
         RuleFor(x => x).Custom((x, ctx) =>
         {
-            if (string.IsNullOrWhiteSpace(x.VaultKeyEncMaster) && string.IsNullOrWhiteSpace(x.VaultKeyEncRecovery))
+            if (string.IsNullOrWhiteSpace(x.VaultKeyEncMaster) && string.IsNullOrWhiteSpace(x.NewPassword))
             {
-                ctx.AddFailure("Both VaultKeyEncMaster and VaultKeyEncRecovery cannot be empty");
+                ctx.AddFailure("Both VaultKeyEncMaster and NewPassword cannot be empty");
             }
         });
     }

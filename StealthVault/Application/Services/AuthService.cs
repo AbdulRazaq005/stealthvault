@@ -57,15 +57,6 @@ public class AuthService(IAppDbContext appDbContext, IConfiguration configuratio
             Salt = user.Salt,
             VaultKeyEncMaster = user.VaultKeyEncMaster,
         }, true);
-        
-        // Write cookie
-        // response.Cookies.Append("auth", tokenString, new CookieOptions
-        // {
-        //     HttpOnly = true,
-        //     Secure = !_config.GetValue<bool>("Jwt:AllowInsecureCookies"),
-        //     SameSite = SameSiteMode.Strict,
-        //     Expires = DateTime.UtcNow.AddDays(10)
-        // });
     }
 
     private string GenerateToken(Guid userId, Enums.UserRole role, string name)
@@ -109,9 +100,10 @@ public class AuthService(IAppDbContext appDbContext, IConfiguration configuratio
         {
             user.VaultKeyEncMaster = model.VaultKeyEncMaster;
         }
-        if (!string.IsNullOrWhiteSpace(model.VaultKeyEncRecovery))
+        if (!string.IsNullOrWhiteSpace(model.NewPassword))
         {
-            user.VaultKeyEncRecovery = model.VaultKeyEncRecovery;
+            var passHash = BCrypt.Net.BCrypt.HashPassword(model.NewPassword);
+            user.PasswordHash = passHash;
         }
         
         user.LastModifiedAt = DateTime.UtcNow;

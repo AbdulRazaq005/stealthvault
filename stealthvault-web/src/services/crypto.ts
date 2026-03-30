@@ -150,25 +150,30 @@ export async function reEncryptVaultKeyWithNewPassword(
   vaultKey: CryptoKey,
   newPassword: string,
   salt: string,
-): Promise<{ vaultKeyEncMaster: string; vaultKeyEncRecovery: string }> {
+): Promise<string> {
   const newDerivedKey = await deriveKeyFromPassword(newPassword, salt);
   const vaultKeyRaw = await crypto.subtle.exportKey("raw", vaultKey);
 
   const masterEncResult = await encryptWithKey(vaultKeyRaw, newDerivedKey);
   const vaultKeyEncMaster = `${masterEncResult.iv}:${masterEncResult.ciphertext}`;
 
-  const recoveryKeyBytes = generateRandomBytes(32);
-  const recoveryImported = await crypto.subtle.importKey(
-    "raw",
-    recoveryKeyBytes as unknown as BufferSource,
-    { name: "AES-GCM", length: AES_KEY_LENGTH },
-    false,
-    ["encrypt"],
-  );
-  const recoveryEncResult = await encryptWithKey(vaultKeyRaw, recoveryImported);
-  const vaultKeyEncRecovery = `${recoveryEncResult.iv}:${recoveryEncResult.ciphertext}`;
+  return vaultKeyEncMaster;
+}
 
-  return { vaultKeyEncMaster, vaultKeyEncRecovery };
+export async function verifyMasterPassword(
+  masterPassword: string,
+  salt: string,
+  vaultKeyEncMaster: string,
+): Promise<CryptoKey | null> {
+  try {
+    const masterDerivedKey = await deriveKeyFromPassword(masterPassword, salt);
+    const [iv, ciphertext] = vaultKeyEncMaster.split(":");
+    const vaultKeyRaw = await decryptWithKey(ciphertext, iv, masterDerivedKey);
+    return masterDerivedKey;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
 }
 
 export async function encryptSecret(

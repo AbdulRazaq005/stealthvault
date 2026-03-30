@@ -46,8 +46,8 @@ export interface RegisterRequest {
 
 export interface UpdatePasswordRequest {
   password: string;
-  vaultKeyEncMaster: string;
-  vaultKeyEncRecovery: string;
+  newPassword: string | null;
+  vaultKeyEncMaster: string | null;
 }
 
 export interface CreateSecretRequest {

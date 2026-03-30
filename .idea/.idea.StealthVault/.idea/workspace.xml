@@ -11,9 +11,16 @@
   <component name="ChangeListManager">
     <list default="true" id="e6c592df-c91c-48f8-b65a-d745bf7a8f1b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StealthVault/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StealthVault/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StealthVault/Application/Services/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/StealthVault/Application/Services/AuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StealthVault/Application/TaskModels/UpdatePasswordTaskModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/StealthVault/Application/TaskModels/UpdatePasswordTaskModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StealthVault/Endpoints/Auth/UpdatePassword.Request.cs" beforeDir="false" afterPath="$PROJECT_DIR$/StealthVault/Endpoints/Auth/UpdatePassword.Request.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StealthVault/Endpoints/Auth/UpdatePassword.cs" beforeDir="false" afterPath="$PROJECT_DIR$/StealthVault/Endpoints/Auth/UpdatePassword.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stealthvault-web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/stealthvault-web/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stealthvault-web/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/stealthvault-web/src/components/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stealthvault-web/src/pages/Index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/stealthvault-web/src/pages/Index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stealthvault-web/src/pages/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/stealthvault-web/src/pages/Profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stealthvault-web/src/pages/Vault.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/stealthvault-web/src/pages/Vault.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stealthvault-web/src/services/crypto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/stealthvault-web/src/services/crypto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stealthvault-web/src/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/stealthvault-web/src/types/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stealthvault-web/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/stealthvault-web/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +73,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/Applications/Rider.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -113,7 +121,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1774853786039</updated>
-      <workItem from="1774853787625" duration="1738000" />
+      <workItem from="1774853787625" duration="6458000" />
     </task>
     <task id="LOCAL-00001" summary="add projects">
       <option name="closed" value="true" />
@@ -123,7 +131,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774853864429</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="rename project name">
+      <option name="closed" value="true" />
+      <created>1774856644406</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1774856644406</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,7 +150,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="add projects" />
-    <option name="LAST_COMMIT_MESSAGE" value="add projects" />
+    <MESSAGE value="rename project name" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename project name" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

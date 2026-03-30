@@ -19,8 +19,8 @@ public class UpdatePassword(IAuthService authService, ICurrentUser currentUser)
             new UpdatePasswordTaskModel
             {
                 Password = req.Password,
+                NewPassword = req.NewPassword,
                 VaultKeyEncMaster = req.VaultKeyEncMaster,
-                VaultKeyEncRecovery = req.VaultKeyEncRecovery
             },
             ct);
         
