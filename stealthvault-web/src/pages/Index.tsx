@@ -31,7 +31,7 @@ const Index: React.FC = () => {
         </h1>
         <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto mb-8 leading-relaxed">
           Your secrets, encrypted. Zero-knowledge architecture ensures only you
-          can access your credentials, API keys, and private notes.
+          can access your credentials, Passwords / keys, and private notes.
         </p>
       </motion.div>
 
@@ -77,7 +77,7 @@ const Index: React.FC = () => {
           },
           {
             icon: <Key className="h-5 w-5" />,
-            label: "API Keys",
+            label: "Passwords / Keys",
             desc: "Manage service tokens",
           },
           {

@@ -55,7 +55,7 @@ import VaultUnlock from "@/components/VaultUnlock";
 
 const secretTypeLabels: Record<SecretType, string> = {
   [SecretType.Credentials]: "Credentials",
-  [SecretType.ApiKey]: "API Key",
+  [SecretType.ApiKey]: "Password / Key",
   [SecretType.PlainText]: "Plain Text",
 };
 
@@ -355,8 +355,8 @@ const Vault: React.FC = () => {
           <SelectContent>
             <SelectItem value="all">All Types</SelectItem>
             <SelectItem value="1">Credentials</SelectItem>
-            <SelectItem value="2">API Key</SelectItem>
-            <SelectItem value="3">Plain Text</SelectItem>
+            <SelectItem value="2">Passwords / Keys</SelectItem>
+            <SelectItem value="3">Plain Texts</SelectItem>
           </SelectContent>
         </Select>
       </div>
@@ -481,7 +481,7 @@ const Vault: React.FC = () => {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="1">Credentials</SelectItem>
-                    <SelectItem value="2">API Key</SelectItem>
+                    <SelectItem value="2">Password / Key</SelectItem>
                     <SelectItem value="3">Plain Text</SelectItem>
                   </SelectContent>
                 </Select>
@@ -536,13 +536,13 @@ const Vault: React.FC = () => {
 
             {form.type === SecretType.ApiKey && (
               <div className="space-y-2">
-                <Label>API Key</Label>
+                <Label>Password / Key</Label>
                 <Input
                   value={form.apiKey}
                   onChange={(e) =>
                     setForm((p) => ({ ...p, apiKey: e.target.value }))
                   }
-                  placeholder="sk-..."
+                  placeholder="*****..."
                   className="font-mono"
                 />
               </div>
@@ -687,7 +687,7 @@ const Vault: React.FC = () => {
                 {viewSecret.secret.type === SecretType.ApiKey && (
                   <div className="space-y-1">
                     <Label className="text-xs text-muted-foreground">
-                      API Key
+                      Password / Key
                     </Label>
                     <div className="flex items-center gap-2">
                       <p className="text-sm font-mono flex-1 break-all">
@@ -712,7 +712,7 @@ const Vault: React.FC = () => {
                         size="icon"
                         className="h-7 w-7"
                         onClick={() =>
-                          copyToClipboard(viewSecret.data, "API Key")
+                          copyToClipboard(viewSecret.data, "Password / Key")
                         }
                       >
                         <Copy className="h-3.5 w-3.5" />
